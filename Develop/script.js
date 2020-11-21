@@ -20,7 +20,8 @@ generateBtn.addEventListener("click", writePassword);
       var lettersUpper = confirm ("Would you like upper case letters in your password?");
       var specialChar = confirm ("Would you like special characters in your password?");
       var lettersLower  = confirm ("Would you like lower case letters in your password");
-      
+      //To be determined after function is executed
+      //allValues = combined string for all characters together
       let allValues = "";
       let password = "";
 
@@ -35,24 +36,31 @@ generateBtn.addEventListener("click", writePassword);
       //Defining total allValues for each variable here in if statements
       if (nums) {
         allValues += "0123456789";
-      } 
+      } else {
+        alert("Okay, no numbers.")
+      }
       if (lettersUpper) {
         allValues += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      } else {
+        alert("Okay, no uppercase letters.")
       }
       if (lettersLower) { 
         allValues +=  "abcdefghijklmnopqrstuvwxyz";
+      } else {
+        alert("Okay, no lowercase letters.")
       }
       if (specialChar) {
         allValues += "~!@#$,%&*)-_+=[]/:;><.?";
+      } else {
+        alert("Okay, no special characters.")
       }
-      //How to get the password from allValues requested with a random output 
+      //How to get the password from allValues requested with a random output(line 60 included). Password length is being implemented here in a for loop.
       for (i = 0; i < passLength; i++) {
-        password += allValues.charAt(Math.floor[Math.random() * allValues.length]);
+        //allValues here implements the character set we want to consider within the random selection depending on if user said "ok" or "cancel" with the Math.floor function
+        password += allValues.charAt(Math.floor(Math.random() * allValues.length));
       }
 
       alert("Your new password is attached below")
       return password;
+
   }
-
-
-//why function is not being called for letter, special characters, working?? it only gives same 1 value if only one is clicked otherwise
