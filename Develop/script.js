@@ -29,6 +29,7 @@ generateBtn.addEventListener("click", writePassword);
       var passLength = prompt ("How many characters would you like in your passcode? Note: Must be between 8-128 characters.")
       if (passLength < 8 || passLength > 128){
         alert("Invalid entry. Please pick a value between 8 and 128.");
+        return //value the function returns to the calling script
     } else {
       (passLength > 7 || passLength < 129)
       alert("Great! Thank you for your response.");
@@ -64,3 +65,4 @@ generateBtn.addEventListener("click", writePassword);
       return password;
 
   }
+  
